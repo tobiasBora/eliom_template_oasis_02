@@ -1,0 +1,26 @@
+# OASIS_START
+# DO NOT EDIT (digest: cc33a4e8515a235287b0c7194826c8eb)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
+# useless stuff for the build process
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library yourapp
+"src/yourapp.cmxs": use_yourapp
+<src/*.ml{,i}>: package(andotherdep)
+<src/*.ml{,i}>: package(eliom.server)
+<src/server/*.ml{,i}>: package(andotherdep)
+<src/server/*.ml{,i}>: package(eliom.server)
+# Executable yourprogram
+"src/client/yourprogram.byte": package(eliom.client)
+<src/client/*.ml{,i}>: package(eliom.client)
+# OASIS_STOP
+true: thread, syntax(camlp4o)
