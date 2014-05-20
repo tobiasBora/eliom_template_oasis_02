@@ -621,6 +621,6 @@ let () =
     (fun hook ->
      dispatch_default hook;
      M.dispatcher
-       ~oasis_executables:["src/client/theprogram.byte"]
+       ~oasis_executables:["src/client/yourprogram.byte"]
        hook;
     )
